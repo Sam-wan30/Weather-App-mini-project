@@ -1,0 +1,110 @@
+body {
+  font-family: "Playfair Display", serif;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Cloud base style */
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: 0.9;
+  animation-timing-function: linear;
+  z-index: 1;
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* Multiple clouds moving from both sides */
+.cloud1 { width: 200px; height: 70px; top: 10%; left: -250px; animation: moveRight 18s linear infinite; }
+.cloud2 { width: 150px; height: 50px; top: 25%; right: -200px; animation: moveLeft 16s linear infinite; }
+.cloud3 { width: 180px; height: 60px; bottom: 20%; left: -250px; animation: moveRight 22s linear infinite; }
+.cloud4 { width: 120px; height: 40px; top: 50%; right: -180px; animation: moveLeft 14s linear infinite; }
+.cloud5 { width: 160px; height: 55px; bottom: 35%; left: -220px; animation: moveRight 20s linear infinite; }
+.cloud6 { width: 140px; height: 45px; top: 70%; right: -180px; animation: moveLeft 17s linear infinite; }
+.cloud7 { width: 220px; height: 75px; bottom: 10%; left: -300px; animation: moveRight 19s linear infinite; }
+.cloud8 { width: 100px; height: 35px; top: 5%; right: -150px; animation: moveLeft 13s linear infinite; }
+
+@keyframes moveRight {
+  from { transform: translateX(0); opacity: 0.8; }
+  to { transform: translateX(160vw); opacity: 0.8; }
+}
+
+@keyframes moveLeft {
+  from { transform: translateX(0); opacity: 0.8; }
+  to { transform: translateX(-160vw); opacity: 0.8; }
+}
+
+/* Weather app container */
+.container {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  text-align: center;
+  width: 300px;
+  z-index: 10;
+  position: relative;
+  font-style: italic;
+}
+
+h1.title {
+  font-size: 28px;
+  color: #004aad;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+} 
+
+h2 {
+  font-style: italic;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 80%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+button {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-style: italic;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#result {
+  margin-top: 15px;
+  font-size: 16px;
+  font-style: italic;
+}
